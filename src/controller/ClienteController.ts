@@ -9,7 +9,7 @@ class ClienteController {
             return res.status(200).json(listaClientes);
 
         } catch (error) {
-            console.error(`Erro ao consultar modelo. ${error}`);
+            console.error(`Erro ao consultar modelo. ${error}`); 
             return res.status(500).json({ mensagem: "Não foi possivel acessar a lista de clientes." });
 
         }

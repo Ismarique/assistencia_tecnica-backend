@@ -1,5 +1,6 @@
 @baseUrl = http://localhost:3333
-@idCliente = 9
+@idCliente = 3
+@idEquipamento = 1
 
 ### Mensagem inicial
 GET {{baseUrl}}/api
@@ -27,4 +28,32 @@ Accept: application/json
 {
   "nome": "JOÃO MARTINS ATUAL",
   "cpf": "3242421245"
+}
+
+### Listar equipamentos
+GET {{baseUrl}}/api/equipamento
+Accept: application/json
+
+### Cadastrar equipamento
+POST {{baseUrl}}/api/equipamento
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id_cliente": 3,
+  "modelo": "Notebook Dell",
+  "descricao": "Notebook com 16GB de RAM",
+  "custo_manutencao": 100.00
+}
+
+### Atualizar equipamento (altere @idEquipamento para um ID existente)
+PUT {{baseUrl}}/api/equipamento/{{idEquipamento}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id_cliente": 3,
+  "modelo": "Notebook Dell Atualizado",
+  "descricao": "Notebook com 32GB de RAM",
+  "custo_manutencao": 150.00
 }
