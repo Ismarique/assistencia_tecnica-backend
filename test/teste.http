@@ -1,0 +1,30 @@
+@baseUrl = http://localhost:3333
+@idCliente = 9
+
+### Mensagem inicial
+GET {{baseUrl}}/api
+Accept: application/json
+
+### Listar clientes
+GET {{baseUrl}}/api/cliente
+Accept: application/json
+
+### Cadastrar cliente
+POST {{baseUrl}}/api/cliente
+Content-Type: application/json
+Accept: application/json
+
+{
+  "nome": "João Martins",
+  "cpf": "3242421245"
+}
+
+### Atualizar cliente (altere @idCliente para um ID existente)
+PUT {{baseUrl}}/api/cliente/{{idCliente}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "nome": "JOÃO MARTINS ATUAL",
+  "cpf": "3242421245"
+}
